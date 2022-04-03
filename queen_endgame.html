@@ -1,0 +1,77 @@
+<!--Name: Kaylehb States
+Student#: 658490560 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/final.css" type="text/css">
+    <style></style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pieces.html">Pieces</a></li>
+            <li><a href="special_moves.html">Special Moves</a></li>
+            <li><a href="tactics.html">Tactics</a></li>
+            <li><a href="queen_endgame.html">Queen Endgame</a></li>
+            <li><a href="rook_endgames.html">Rook Endgame</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>Endgame: King & Queen vs King</h1>
+    </div>
+    <div class="endgameBox">
+        <img src="img/queenEnd1.png" id="stepImg" alt="Images showing the steps being discussed below">
+        <div>
+            <button onclick="reverse()" class="travButton">&lt;</button>
+            <button onclick="advance()" class="travButton">&gt;</button>
+        </div>
+        <p id="desc">
+            Let's look at how to win when you have a king and a queen and your opponent
+            only has a king.
+        </p>
+    </div>
+    <script type="text/javascript">
+        let index = 1;
+        function reverse(){
+            if(index > 1){
+                index = index - 1;
+            }
+            update();
+        }
+        function advance(){
+            if(index < 6){
+                index = index + 1;
+            }
+            update();
+        }
+        function update(){
+            document.getElementById("stepImg").src = "img/queenEnd" + index + ".png";
+            switch(index){
+                case 1:
+                    document.getElementById("desc").innerText = "Let's look at how to win when you have a king and a queen and your opponent only has a king."
+                    break;
+                case 2:
+                    document.getElementById("desc").innerText = "Start by moving your queen to a space a knight's move away from the opponents king (if you're queen is already in such a position make a waitng move with your king)."
+                    break;
+                case 3:  
+                    document.getElementById("desc").innerText = "Next, follow your opponent's king's moves with your queen. Continue like this until you arrive at a position like..."
+                    break;
+                case 4: 
+                    document.getElementById("desc").innerText = "...this, where your opponents king is on the edge of the board and has only one legal move."
+                    break;
+                case 5:
+                    document.getElementById("desc").innerText = "Now move your king towards your opponent's king until your king is on this space (it doesn't matter whether your opponent is in the corner or the  other space.)"
+                    break;
+                case 6:
+                    document.getElementById("desc").innerText = "Checkmate!"
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

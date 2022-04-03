@@ -1,0 +1,76 @@
+<!--Name: Kaylehb States
+Student#: 658490560 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/final.css" type="text/css">
+    <style></style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pieces.html">Pieces</a></li>
+            <li><a href="special_moves.html">Special Moves</a></li>
+            <li><a href="tactics.html">Tactics</a></li>
+            <li><a href="queen_endgame.html">Queen Endgame</a></li>
+            <li><a href="rook_endgames.html">Rook Endgame</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>Rook Endgame</h1>
+    </div>
+    <div class="endgameBox">
+        <img src="img/rookEnd1.png" id="stepImg" alt="Images showing the steps being discussed below">
+        <div>
+            <button onclick="reverse()" class="travButton">&lt;</button>
+            <button onclick="advance()" class="travButton">&gt;</button>
+        </div>
+        <p id="desc">
+            Let's look at how to win when you have a king and a rook and your opponent
+            only has a king.
+        </p>
+    </div>
+    <script type="text/javascript">
+        let index = 1;
+        function reverse(){
+            if(index > 1){
+                index = index - 1;
+            }
+            update();
+        }
+        function advance(){
+            if(index < 6){
+                index = index + 1;
+            }
+            update();
+        }
+        function update(){
+            document.getElementById("stepImg").src = "img/rookEnd" + index + ".png";
+            switch(index){
+                case 1:
+                    document.getElementById("desc").innerText = "Let's look at how to win when you have a king and a rook and your opponent only has a king."
+                    break;
+                case 2:
+                    document.getElementById("desc").innerText = "Start by cutting off your opponents king in any direction."
+                    break;
+                case 3:  
+                    document.getElementById("desc").innerText = "If your opponent moves their king back move your rook towards them in the same direction as before. Otherwise, move your king to be a knights move away from the opponents king (this will not always be so easy as in the example)."
+                    break;
+                case 4: 
+                    document.getElementById("desc").innerText = "If your opponent moves their king to be opposite yours skip this step. Otherwise, follow the opponents king until they reach the edge of the board, or move their king to be opposite yours."
+                    break;
+                case 5:
+                    document.getElementById("desc").innerText = "The opponents king is now blocked off by your king so your rook can move up and push their king further back. Now repeat these steps until..."
+                    break;
+                case 6:
+                    document.getElementById("desc").innerText = "Checkmate!"
+            }
+        }
+    </script>
+</body>
+</html>
